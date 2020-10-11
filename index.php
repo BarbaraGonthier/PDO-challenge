@@ -13,17 +13,24 @@
     require_once '_connec.php';
 
     $pdo = new \PDO(DSN, USER, PASS);
-
+    
+    if ($SERVER['REQUEST_METHOD] === 'POST') {
+    $firstname = trim($_POST['firstname']);
     $lastname = trim($_POST['lastname']);
-    $limit = $_GET[‘limit’];
-    $query = 'SELECT * FROM friend WHERE lastname=:lastname LIMIT :limit';
+    }
+    
+   
+    $query = 'INSERT INTO friend (firstname, lastname) VALUES (:firstname, :lastname)';
     $statement = $pdo->prepare($query);
-
+    
+    $statement->bindValue(':firstname', $firstname, \PDO::PARAM_STR);
     $statement->bindValue(':lastname', $lastname, \PDO::PARAM_STR);
-    $statement->bindValue(':limit', $limit, \PDO::PARAM_INT);
+
 
     $statement->execute();
-
+    
+    $query = "SELECT * FROM friend";
+    $statement = $pdo->query($query);
     $friends = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
     ?>
