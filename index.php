@@ -31,12 +31,9 @@
     $statement->execute();
 
     $friends = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach($friends as $friend) {
-        echo $friend['firstname'] . ' ' . $friend['lastname'];
-
     }
     ?>
+    
     <section id="friends-list">
         <?php foreach($friends as $friend) { ?>
         <div> <?php echo $friend['firstname'] . ' ' . $friend['lastname']; ?> </div>
