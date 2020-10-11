@@ -36,9 +36,9 @@
 
     <form method="post" action="">
         <label for="firstname">Firstame :</label>
-        <input type="text" value="firstname" name="firstname">
+        <input type="text" id="firstname" name="firstname">
         <label for="lastname">Lastname :</label>
-        <input type="text" value="lastname" name="lastname">
+        <input type="text" id="lastname" name="lastname">
         <button type="submit">submit</button>
     </form>
 
