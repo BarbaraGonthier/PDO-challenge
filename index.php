@@ -14,12 +14,6 @@
 
     $pdo = new \PDO(DSN, USER, PASS);
 
-    /**
-
-    $query = "SELECT * FROM friend";
-    $statement = $pdo->query($query);
-    **/
-
     $lastname = trim($_POST['lastname']);
     $limit = $_GET[‘limit’];
     $query = 'SELECT * FROM friend WHERE lastname=:lastname LIMIT :limit';
