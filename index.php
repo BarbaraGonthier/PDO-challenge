@@ -14,7 +14,7 @@
 
     $pdo = new \PDO(DSN, USER, PASS);
     
-    if ($SERVER['REQUEST_METHOD] === 'POST') {
+    if ($SERVER['REQUEST_METHOD'] === 'POST') {
     $firstname = trim($_POST['firstname']);
     $lastname = trim($_POST['lastname']);
     }
