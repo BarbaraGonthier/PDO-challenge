@@ -34,11 +34,11 @@
     $friends = $statement->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
-<section id="friends-list">
+<ul id="friends-list">
     <?php foreach($friends as $friend) { ?>
-    <div> <?php echo $friend['firstname'] . ' ' . $friend['lastname']; ?> </div>
+    <li> <?php echo $friend['firstname'] . ' ' . $friend['lastname']; ?> </li>
     <?php } ?>
-</section>
+</ul
 
 <form method="post" action="">
     <label for="firstname">Firstame :</label>
